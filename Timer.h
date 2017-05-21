@@ -36,6 +36,8 @@ class Timer
 
 public:
   Timer(void);
+  void updateEventPeriod(unsigned long period);
+  void updateEventPeriod(unsigned long period, int8_t id);
 
   int8_t every(unsigned long period, void (*callback)(void));
   int8_t every(unsigned long period, void (*callback)(void), int repeatCount);

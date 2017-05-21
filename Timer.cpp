@@ -33,6 +33,14 @@ Timer::Timer(void)
 {
 }
 
+void Timer::updateEventPeriod(unsigned long period) {
+	updateEventPeriod(period, 0);
+}
+
+void Timer::updateEventPeriod(unsigned long period, int8_t id) {
+	_events[id].period = period;
+}
+
 int8_t Timer::every(unsigned long period, void (*callback)(), int repeatCount)
 {
 	int8_t i = findFreeEventIndex();
